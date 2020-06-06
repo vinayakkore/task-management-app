@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   public login() {
     if (this.loginForm.valid) {
+      sessionStorage.setItem('user', this.loginForm.get('user').value);
       this.router.navigate(['task-list']);
     }
   }

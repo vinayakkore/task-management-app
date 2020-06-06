@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
   private _jsonURL = 'assets/sample-notifications.json';
   public notifications = [];
+  public user;
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
       this.notifications = data;
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = sessionStorage.getItem('user');
   }
 
 }

@@ -1,15 +1,17 @@
 
-<form class="justify-content-center login">
+<form [formGroup]="loginForm" class="justify-content-center login">
   
   <div class="row">
     <div class="col-lg-12"><h1>Login</h1></div>
       <div class="col-lg-12 form-group">
         <label for="userName">User Name</label>
-        <input type="text" class="form-control" id="userName" placeholder="Enter user name">
+        <input type="text" formControlName="user" class="form-control" id="userName" placeholder="Enter user name" required>
+        <span *ngIf="loginForm.user.error.required">user is required.</span>
       </div>
       <div class="col-lg-12 form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password">
+        <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required>
+        <span *ngIf="loginForm.password.error.required">password is required.</span>
       </div>
       <div class="col-lg-12">
         <button type="submit" (click)="login()" class="btn btn-primary">Submit</button>

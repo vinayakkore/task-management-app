@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  private _jsonURL = 'assets/sample-notifications.json';
+  public notifications = [];
+  constructor(private http: HttpClient) {
+    this.getJSON().subscribe(data => {
+      this.notifications = data;
+    });
+  }
+  public getJSON(): Observable<any> {
+    return this.http.get(this._jsonURL);
+  }
 
   ngOnInit(): void {
   }

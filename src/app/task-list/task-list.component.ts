@@ -9,9 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class TaskListComponent implements OnInit {
   private _jsonURL = 'assets/sample-data.json';
+  public taskList = [];
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
-     console.log(data);
+      this.taskList = data;
     });
   }
   public getJSON(): Observable<any> {

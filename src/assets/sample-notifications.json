@@ -1,0 +1,18 @@
+[
+    {
+        "ticket": "Ticket created 4",
+        "date":"06/05/2020"
+    },
+    {
+        "ticket": "Ticket created 3",
+        "date":"06/05/2020"
+    },
+    {
+        "ticket": "Ticket created 2",
+        "date":"06/04/2020"
+    },
+    {
+        "ticket": "Ticket created 1",
+        "date":"06/03/2020"
+    }
+]
